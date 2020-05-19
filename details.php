@@ -63,7 +63,7 @@
     	<div class="section group">
 				<div class="cont-desc span_1_of_2">				
 					<div class="grid images_3_of_2">
-						<img src="images/preview-img.jpg" alt="" />
+						<img src="images/details-img.jpg" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
 					<h2>Lorem Ipsum is simply dummy text </h2>
@@ -128,7 +128,7 @@
 						<li><a href="faq.html">Customer Service</a></li>
 						<li><a href="#">Privacy Policy</a></li>
 						<li><a href="contact.html"><span>Site Map</span></a></li>
-						<li><a href="preview-2.html"><span>Search Terms</span></a></li>
+						<li><a href="details-2.html"><span>Search Terms</span></a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
