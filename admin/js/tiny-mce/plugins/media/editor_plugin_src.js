@@ -312,7 +312,7 @@
 		getType : function(value) {
 			var i, values, typeItem;
 
-			// Find type by checking the classes
+			// Find type by checking the controlller
 			values = tinymce.explode(value, ' ');
 			for (i = 0; i < values.length; i++) {
 				typeItem = this.lookup[values[i]];

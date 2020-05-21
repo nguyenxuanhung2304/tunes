@@ -1,13 +1,14 @@
 <?php
-include('../classes/adminlogin.php');
+include('../controlller/AdminController.php');
 ?>
 <?php
-	$adminLogin = new AdminLogin();
-	if ($_SERVER['REQUEST_METHOD'] === "POST"){
-		$adminUser = $_SERVER['adminUser'];
-		$adminPass = $_SERVER['adminPass'];
+	$adminController = new AdminController();
+	if ($_SERVER['REQUEST_METHOD'] == "POST"){
+		$adminUser = $_POST['adminUser'];
+		$adminPass = $_POST['adminPass'];
 
-		$loginCheck = $adminLogin->login()
+		//Neu du lieu sai thi: loginCheck = $alert
+		$loginCheck = $adminController->login($adminUser,$adminPass);
 	}
 ?>
 <!DOCTYPE html>
@@ -19,8 +20,15 @@ include('../classes/adminlogin.php');
 <body>
 <div class="container">
 	<section id="content">
-		<form action="login.php" method="post">
+		<form action="login.php" method="POST">
 			<h1>Admin Login</h1>
+			<span>
+			<?php
+				if(isset($loginCheck)){
+					echo $loginCheck;
+				}
+			?>
+			</span>
 			<div>
 				<input type="text" placeholder="Username" required="" name="adminUser"/>
 			</div>

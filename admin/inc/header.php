@@ -44,8 +44,8 @@
                     <img src="img/livelogo.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>Training with live project</h1>
-					<p>www.trainingwithliveproject.com</p>
+					<h1>NamiSan</h1>
+                    <p>Nguyễn Xuân Hùng</p>
 				</div>
                 <div class="floatright">
                     <div class="floatleft">
@@ -53,7 +53,7 @@
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
                             <li>Hello Admin</li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="login.php">Logout</a></li>
                         </ul>
                     </div>
                 </div>
