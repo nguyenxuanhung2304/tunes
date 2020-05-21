@@ -4676,7 +4676,7 @@ tinymce.html.Writer = function(settings) {
 									ov = v;
 									v = tinymce._replace(/.*\.([a-z0-9_\-]+).*/i, '$1', v);
 
-									// Filter classes
+									// Filter controlller
 									if (f && !(v = f(v, ov)))
 										return;
 
@@ -7467,7 +7467,7 @@ tinymce.html.Writer = function(settings) {
 			}
 		});
 
-		// Remove internal classes mceItem<..>
+		// Remove internal controlller mceItem<..>
 		htmlParser.addAttributeFilter('class', function(nodes, name) {
 			var i = nodes.length, node, value;
 
@@ -11019,7 +11019,7 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 					var s, cl;
 
 					if (n == 'class') {
-						// Build regexp for classes
+						// Build regexp for controlller
 						if (!t.classesRE) {
 							cl = t.dom.getClasses();
 
@@ -14072,7 +14072,7 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 							format.block_expand = true;
 						}
 
-						// Split classes if needed
+						// Split controlller if needed
 						if (typeof(format.classes) === 'string')
 							format.classes = format.classes.split(/\s+/);
 					});
@@ -14753,9 +14753,9 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 				for (i = 0; i < formatList.length; i++) {
 					format = formatList[i];
 
-					// Name name, attributes, styles and classes
+					// Name name, attributes, styles and controlller
 					if (matchName(node, format) && matchItems(node, format, 'attributes') && matchItems(node, format, 'styles')) {
-						// Match classes
+						// Match controlller
 						if (classes = format.classes) {
 							for (i = 0; i < classes.length; i++) {
 								if (!dom.hasClass(node, classes[i]))
@@ -15220,18 +15220,18 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 					}
 
 					if (!compare_node || isEq(dom.getAttrib(compare_node, name), value)) {
-						// Keep internal classes
+						// Keep internal controlller
 						if (name == 'class') {
 							value = dom.getAttrib(node, name);
 							if (value) {
-								// Build new class value where everything is removed except the internal prefixed classes
+								// Build new class value where everything is removed except the internal prefixed controlller
 								valueOut = '';
 								each(value.split(/\s+/), function(cls) {
 									if (/mce\w+/.test(cls))
 										valueOut += (valueOut ? ' ' : '') + cls;
 								});
 
-								// We got some internal classes left
+								// We got some internal controlller left
 								if (valueOut) {
 									dom.setAttrib(node, name, valueOut);
 									return;
@@ -15251,7 +15251,7 @@ tinymce.create('tinymce.ui.Toolbar:tinymce.ui.Container', {
 					}
 				});
 
-				// Remove classes
+				// Remove controlller
 				each(format.classes, function(value) {
 					value = replaceVars(value, vars);
 
