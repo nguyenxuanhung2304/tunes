@@ -1,12 +1,9 @@
- <div class="clear">
+            <!-- Footer -->
+<footer class="sticky-footer bg-white pt-4">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; NamiSan</span>
         </div>
     </div>
-    <div class="clear">
-    </div>
-    <div id="site_info">
-        <p>
-         &copy; Copyright <a href="https://www.facebook.com/profile.php?id=100009754241154">NamiSan</a>. All Rights Reserved.
-        </p>
-    </div>
-</body>
-</html>
+</footer>
+            <!-- End of Footer -->
