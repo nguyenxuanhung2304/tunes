@@ -1,9 +1,9 @@
 <?php
-include '../models/Session.php';
+include_once '../models/Session.php';
 Session::checkLogin();
 
-include '../models/Database.php';
-include '../helpers/Format.php';
+include_once '../models/Database.php';
+include_once '../helpers/Format.php';
 ?>
 
 <?php
