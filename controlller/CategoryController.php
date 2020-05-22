@@ -1,6 +1,6 @@
 <?php
-include '../models/Database.php';
-include '../helpers/Format.php';
+include_once '../models/Database.php';
+include_once '../helpers/Format.php';
 ?>
 
 <?php
@@ -14,7 +14,7 @@ class CategoryController
         $this->format = new Format();
     }
 
-    public function add($categoryName)
+    public function create($categoryName)
     {
         //validation data
         $categoryName = $this->format->validation($categoryName);
@@ -23,7 +23,7 @@ class CategoryController
 
         // check empty
         if (empty($categoryName)) {
-            return 'categoryName must be not empty';
+            return "<div class='alert alert-warning'>Category name must be not empty!</div>";          
         } else {
             $query = "INSERT INTO tbl_category(categoryName) VALUES('$categoryName')";
             $row = $this->database->insert($query);
