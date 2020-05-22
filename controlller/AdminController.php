@@ -30,16 +30,16 @@ class AdminController
         if (empty($adminUser) || empty($adminPass)) {
             return 'User or password must be not empty';
         } else {
-            $query = 'SELECT * FROM tbl_admin WHERE adminUser = {$adminUser} AND adminPass = {$adminPass} LIMIT 1';
+            $query = "SELECT * FROM tbl_admin WHERE adminUser = '$adminUser' AND adminPass = '$adminPass' LIMIT 1";
             $row = $this->database->select($query);
-            echo $row;
 
             if ($row !== false) {
                 // fetch_assoc: trả về 1 hàng kết quả như là mảng kết hợp
+                $value = $row->fetch_assoc();
                 Session::set('adminLogin', true);
-                Session::set('adminId', $row['adminId']);
-                Session::set('adminUser', $row['adminUser']);
-                Session::set('adminName', $row['adminName']);
+                Session::set('adminId', $value['adminId']);
+                Session::set('adminUser', $value['adminUser']);
+                Session::set('adminName', $value['adminName']);
 
                 header('Location:index.php');
             } else {
