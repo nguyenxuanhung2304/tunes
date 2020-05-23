@@ -6,7 +6,7 @@
 $categoryController = new CategoryController();
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $categoryName = $_POST['categoryName'];
-    $alert = $categoryController->create($categoryName);
+    $alert = $categoryController->addCategory($categoryName);
 }
 ?>
 

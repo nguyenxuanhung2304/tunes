@@ -1,70 +1,68 @@
-﻿<?php include 'inc/header.php';?>
-<?php include 'inc/sidebar.php';?>
-        <div class="grid_10">
-            <div class="box round first grid">
-                <h2>Category List</h2>
-                <div class="block">        
-                    <table class="data display datatable" id="example">
-					<thead>
-						<tr>
-							<th>Serial No.</th>
-							<th>Category Name</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="odd gradeX">
-							<td>01</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>02</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="odd gradeX">
-							<td>03</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>04</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-							<tr class="odd gradeX">
-							<td>05</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>06</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="odd gradeX">
-							<td>07</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>08</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-					</tbody>
-				</table>
-               </div>
+﻿<?php include 'inc/sidebar.php';?>
+<?php include 'inc/header.php';?>
+<?php include '../controlller/CategoryController.php'?>
+<?php
+    $categoryController = new CategoryController();
+    $allRecord = $categoryController->showCategory();
+
+//    if (isset($_GET['categoryId'])){
+//        $categoryController->deleteCategory($_GET['categoryId']);
+//    }
+?>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-borderless">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <!-- StartForeach-->
+                        <?php
+                        if ($allRecord){
+                        $id = 0;
+                        while ($row = $allRecord->fetch_assoc()){
+                            $id++;
+                        ?>
+                        <th scope="row">
+                            <?php echo $id ?>
+                        </th>
+                        <td>
+                            <?php echo $row['categoryName'] ?>
+                        </td>
+                        <td class="td-actions text-right">
+                            <button type="button" rel="tooltip" title="Edit"
+                                    class="btn btn-info btn-simple btn-link">
+                                <a href="catedit.php?categoryId=<?php echo $row['categoryId'] ?>">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                            </button>
+                        </td>
+                        <td class="td-actions text-right">
+                            <form method="POST" action="catlist.php">
+                                <button type="submit" rel="tooltip" title="Delete"
+                                        class="btn btn-danger btn-simple btn-link">
+                                    <a href="?categoryId=<?php echo $row['categoryId'] ?>">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
+                        }
+                    }?>
+                    <!-- EndForeach-->
+                    </tbody>
+                </table>
             </div>
         </div>
-<script type="text/javascript">
-	$(document).ready(function () {
-	    setupLeftMenu();
-
-	    $('.datatable').dataTable();
-	    setSidebarHeight();
-	});
-</script>
+    </div>
+</div>
 <?php include 'inc/footer.php';?>
 

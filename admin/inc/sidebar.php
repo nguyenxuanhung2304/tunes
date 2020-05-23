@@ -112,7 +112,7 @@ Session::checkSession();
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Category:</h6>
                         <a class="collapse-item" href="catadd.php">Add Category</a>
-                        <a class="collapse-item" href="#">Category List</a>
+                        <a class="collapse-item" href="catlist.php">Category List</a>
                     </div>
                 </div>
             </li>
