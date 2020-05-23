@@ -1,11 +1,8 @@
 ﻿<?php include 'inc/sidebar.php';?>
 <?php include 'inc/header.php';?>
-        <div class="grid_10">
-            <div class="box round first grid">
-                <h2> Dashbord</h2>
-                <div class="block">               
-                  Welcome admin panel        
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <h2>Dashboard</h2>
         </div>
+    </div>
 <?php include 'inc/footer.php';?>
