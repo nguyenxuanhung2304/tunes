@@ -4,14 +4,11 @@
 <?php
 $categoryController = new CategoryController();
 $allRecord = $categoryController->showCategory();
-
-if (isset($_GET['categoryId'])) {
-    $categoryController->deleteCategory($_GET['categoryId']);
-
-}
 ?>
+
 <div class="content">
     <div class="container-fluid">
+        <h2>Category List</h2>
         <div class="row">
             <div class="col-md-12">
                 <table class="table table-borderless">
@@ -44,11 +41,20 @@ if (isset($_GET['categoryId'])) {
                                         </button>
                                     </td>
                                     <td class="td-actions text-right">
+<<<<<<< HEAD
                                         <button type="submit" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-link">
                                             <a href="?categoryId=<?php echo $row['categoryId'] ?>">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </button>
+=======
+                                        <form method="POST" action="catlist.php">
+                                            <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-link">
+                                                <a onclick="return confirm('Are you want to delete?')" href="catdel.php?categoryId=<?php echo $row['categoryId'] ?>">
+                                                    <i class="fa fa-times"></i>
+                                                </a>
+                                            </button>
+>>>>>>> 1d3efbde081a9ba545629413b3637acbbcdde33a
                                     </td>
                         </tr>
                 <?php
@@ -57,6 +63,8 @@ if (isset($_GET['categoryId'])) {
                 <!-- EndForeach-->
                     </tbody>
                 </table>
+                </form>
+
             </div>
         </div>
     </div>
