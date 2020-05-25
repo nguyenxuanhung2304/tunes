@@ -41,20 +41,12 @@ $allRecord = $categoryController->showCategory();
                                         </button>
                                     </td>
                                     <td class="td-actions text-right">
-<<<<<<< HEAD
-                                        <button type="submit" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-link">
-                                            <a href="?categoryId=<?php echo $row['categoryId'] ?>">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </button>
-=======
                                         <form method="POST" action="catlist.php">
                                             <button type="button" rel="tooltip" title="Delete" class="btn btn-danger btn-simple btn-link">
                                                 <a onclick="return confirm('Are you want to delete?')" href="catdel.php?categoryId=<?php echo $row['categoryId'] ?>">
                                                     <i class="fa fa-times"></i>
                                                 </a>
                                             </button>
->>>>>>> 1d3efbde081a9ba545629413b3637acbbcdde33a
                                     </td>
                         </tr>
                 <?php
