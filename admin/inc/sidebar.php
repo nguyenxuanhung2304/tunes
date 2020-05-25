@@ -3,10 +3,10 @@ include_once '../models/Session.php';
 Session::checkSession();
 ?>
 <?php
-// header("Cache-Control: no-cache, must-revalidate");
-// header("Pragma: no-cache");
-// header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-// header("Cache-Control: max-age=2592000");
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+header("Cache-Control: max-age=2592000");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +23,7 @@ Session::checkSession();
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -68,8 +66,7 @@ Session::checkSession();
 
             <!-- Nav Item - Site Option Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Site Option</span>
                 </a>
@@ -85,8 +82,7 @@ Session::checkSession();
 
             <!-- Nav Item - Update Page Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-sync"></i>
                     <span>Update Page</span>
                 </a>
@@ -103,8 +99,7 @@ Session::checkSession();
 
             <!-- Nav Item - Category Option Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-list"></i>
                     <span>Category Option</span>
                 </a>
@@ -119,8 +114,7 @@ Session::checkSession();
 
             <!-- Nav Item - Pruduct Option Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fab fa-product-hunt"></i>
                     <span>Product Option</span>
                 </a>
@@ -137,8 +131,7 @@ Session::checkSession();
 
             <!-- Nav Item - Slider Option Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-sliders-h"></i>
                     <span>Slider Option</span>
                 </a>
