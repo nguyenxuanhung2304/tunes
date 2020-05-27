@@ -13,7 +13,6 @@ if (!isset($categoryId) && $_GET['categoryId'] === NULL){
 }else{
     $id = $_GET['categoryId'];
 }
-
 //update
 if ($_SERVER["REQUEST_METHOD"] === 'POST'){
     $categoryName = $_POST["categoryName"];

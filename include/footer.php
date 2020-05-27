@@ -1,93 +1,78 @@
-</div>
-<div class="footer">
-    <div class="wrapper">
-        <div class="section group">
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>Information</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Customer Service</a></li>
-                    <li><a href="#"><span>Advanced Search</span></a></li>
-                    <li><a href="#">Orders and Returns</a></li>
-                    <li><a href="#"><span>Contact Us</span></a></li>
-                </ul>
-            </div>
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>Why buy from us</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="faq.html">Customer Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="contact.html"><span>Site Map</span></a></li>
-                    <li><a href="preview.html"><span>Search Terms</span></a></li>
-                </ul>
-            </div>
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>My account</h4>
-                <ul>
-                    <li><a href="contact.html">Sign In</a></li>
-                    <li><a href="index.html">View Cart</a></li>
-                    <li><a href="#">My Wishlist</a></li>
-                    <li><a href="#">Track My Order</a></li>
-                    <li><a href="faq.html">Help</a></li>
-                </ul>
-            </div>
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>Contact</h4>
-                <ul>
-                    <li><span>+88-01713458599</span></li>
-                    <li><span>+88-01813458552</span></li>
-                </ul>
-                <div class="social-icons">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li class="facebook"><a href="#" target="_blank"> </a></li>
-                        <li class="twitter"><a href="#" target="_blank"> </a></li>
-                        <li class="googleplus"><a href="#" target="_blank"> </a></li>
-                        <li class="contact"><a href="#" target="_blank"> </a></li>
-                        <div class="clear"></div>
-                    </ul>
+<!-- Start Footer -->
+<footer>
+    <div class="container-fluid pt-5 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="row">
+                        <h5>Meta</h5>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="underline bg-light" style="width: 50px"></div>
+                    </div>
+                    <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Register</p>
+                    <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Log In</p>
+                    <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Enter RSS</p>
+                    <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Comments</p>
+                    <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Webseotips</p>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="row">
+                        <h5>Recent Posts</h5>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="underline bg-light" style="width: 50px"></div>
+                    </div>
+                    <div class="row">
+                        <div class="media">
+                            <img src="img/b1.jpg" class="img-fluid" alt="media-image">
+                            <div class="media-body ml-2">
+                                <h6>ackets For The Soul. What Color Is Yours?</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="media">
+                            <img src="img/b2.jpg" class="img-fluid" alt="media-image">
+                            <div class="media-body ml-2">
+                                <h6>Best Fabrics For Your Dream Dress!</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="row">
+                        <h5>About</h5>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="underline bg-light" style="width: 50px"></div>
+                    </div>
+                    <div class="row">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel inventore quis harum mollitia ex esse obcaecati deserunt alias fuga quia.<br>Vel inventore quis harum mollitia.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="row">
+                        <h5>Tags</h5>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="underline bg-light" style="width: 50px"></div>
+                    </div>
+                    <button class="btn btn-outline-light">autunm</button> <button class="btn btn-outline-light">Dress</button> <button class="btn btn-outline-light">ladice</button> <button class="btn btn-outline-light">black dressunm</button> <button class="btn btn-outline-light">modern dress</button>
                 </div>
             </div>
         </div>
-        <div class="copy_right">
-            <p>Training with live project &amp; All rights Reseverd </p>
-        </div>
     </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function() {
-        /*
-			var defaults = {
-	  			containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-	 		};
-			*/
-
-        $().UItoTop({
-            easingType: 'easeOutQuart'
-        });
-
-    });
-</script>
-<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-<link href="css/flexslider.css" rel='stylesheet' type='text/css' />
-<script defer src="js/jquery.flexslider.js"></script>
-<script type="text/javascript">
-    $(function() {
-        SyntaxHighlighter.all();
-    });
-    $(window).load(function() {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            start: function(slider) {
-                $('body').removeClass('loading');
-            }
-        });
-    });
-</script>
+</footer>
+<!-- . End Footer -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 </body>
 
 </html>

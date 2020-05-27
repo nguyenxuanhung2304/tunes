@@ -64,6 +64,36 @@ header("Cache-Control: max-age=2592000");
                 Option
             </div>
 
+            <!-- Nav Item - Category Option Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-list"></i>
+                    <span>Category Option</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Category:</h6>
+                        <a class="collapse-item" href="catadd.php">Add Category</a>
+                        <a class="collapse-item" href="catlist.php">Category List</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pruduct Option Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fab fa-product-hunt"></i>
+                    <span>Product Option</span>
+                </a>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Product:</h6>
+                        <a class="collapse-item" href="productadd.php">Product Add</a>
+                        <a class="collapse-item" href="productlist.php">Product List</a>
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Site Option Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
@@ -97,37 +127,7 @@ header("Cache-Control: max-age=2592000");
                 </div>
             </li>
 
-            <!-- Nav Item - Category Option Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-list"></i>
-                    <span>Category Option</span>
-                </a>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Category:</h6>
-                        <a class="collapse-item" href="catadd.php">Add Category</a>
-                        <a class="collapse-item" href="catlist.php">Category List</a>
-                    </div>
-                </div>
-            </li>
 
-            <!-- Nav Item - Pruduct Option Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fab fa-product-hunt"></i>
-                    <span>Product Option</span>
-                </a>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Product:</h6>
-                        <a class="collapse-item" href="utilities-color.php">Colors</a>
-                        <a class="collapse-item" href="utilities-border.php">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.php">Animations</a>
-                        <a class="collapse-item" href="utilities-other.php">Other</a>
-                    </div>
-                </div>
-            </li>
 
             <!-- Nav Item - Slider Option Menu -->
             <li class="nav-item">
