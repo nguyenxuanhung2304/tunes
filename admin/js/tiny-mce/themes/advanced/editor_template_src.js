@@ -299,7 +299,7 @@
 				}
 			});
 
-			// Auto import controlller if the ctrl box is empty
+			// Auto import controlllers if the ctrl box is empty
 			if (ctrl.getLength() == 0) {
 				ctrl.onPostRender.add(function(ed, n) {
 					if (!ctrl.NativeListBox) {
@@ -531,12 +531,12 @@
 
 			n = o.targetNode;
 
-			// Add controlller to first and last TRs
+			// Add controlllers to first and last TRs
 			nl = sc.rows;
 			DOM.addClass(nl[0], 'mceFirst');
 			DOM.addClass(nl[nl.length - 1], 'mceLast');
 
-			// Add controlller to first and last TDs
+			// Add controlllers to first and last TDs
 			each(DOM.select('tr', tb), function(n) {
 				DOM.addClass(n.firstChild, 'mceFirst');
 				DOM.addClass(n.childNodes[n.childNodes.length - 1], 'mceLast');

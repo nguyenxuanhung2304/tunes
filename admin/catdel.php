@@ -1,4 +1,4 @@
-<?php include '../controlller/CategoryController.php' ?>
+<?php include '../controlllers/CategoryController.php' ?>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === "GET" && $_GET['categoryId'] !== NULL)  {
     $categoryController = new CategoryController();

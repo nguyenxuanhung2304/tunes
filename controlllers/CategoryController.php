@@ -1,17 +1,14 @@
 <?php
 include_once '../models/Database.php';
-include_once '../helpers/Format.php';
 ?>
 
 <?php
 class CategoryController
 {
     private $database;
-    private $format;
     public function __construct()
     {
         $this->database = new Database();
-        $this->format = new Format();
     }
 
     public function deleteCategory($categoryId): void
@@ -28,7 +25,6 @@ class CategoryController
 
     public function updateCategory($categoryId, $categoryName)
     {
-        $categoryName = $this->format->validation($categoryName);
         $categoryName = mysqli_real_escape_string($this->database->link, $categoryName);
         $categoryId = mysqli_real_escape_string($this->database->link, $categoryId);
 
@@ -53,8 +49,6 @@ class CategoryController
 
     public function addCategory($categoryName): ?string
     {
-        //validation data
-        $categoryName = $this->format->validation($categoryName);
 
         $categoryName = mysqli_real_escape_string($this->database->link, $categoryName);
 
