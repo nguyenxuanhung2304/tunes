@@ -1,6 +1,6 @@
 ﻿<?php include 'inc/sidebar.php'; ?>
 <?php include 'inc/header.php'; ?>
-<?php include '../controlller/CategoryController.php' ?>
+<?php include '../controlllers/CategoryController.php' ?>
 <?php
 $categoryController = new CategoryController();
 $allRecord = $categoryController->showCategory();

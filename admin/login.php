@@ -1,5 +1,5 @@
 <?php
-include('../controlller/AdminController.php');
+include('../controlllers/AdminController.php');
 ?>
 <?php
 $adminController = new AdminController();
