@@ -32,12 +32,9 @@ class CategoryController
             return "<div class='alert alert-warning'>Category name must be not empty!</div>";
         } else {
             $query = "UPDATE tbl_category SET categoryName = '$categoryName' WHERE categoryId = '$categoryId'";
-            $row = $this->database->update($query);
-            if ($row) {
-                return "<div class='alert alert-success'>Category Update successfully!</div>";
-            } else {
-                return "<div class='alert alert-warning'>Category Update not success!</div>";
-            }
+            $this->database->update($query);
+
+            return '<script>window.location.replace("catlist.php")</script>';
         }
     }
 

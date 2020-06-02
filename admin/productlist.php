@@ -1,152 +1,74 @@
-﻿<?php include 'inc/header.php';?>
-<?php include 'inc/sidebar.php';?>
-<div class="grid_10">
-    <div class="box round first grid">
-        <h2>Post List</h2>
-        <div class="block">  
-            <table class="data display datatable" id="example">
-			<thead>
-				<tr>
-					<th>Post Title</th>
-					<th>Description</th>
-					<th>Category</th>
-					<th>Image</th>
-					<th>Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="odd gradeX">
-					<td>Trident</td>
-					<td>Internet Explorer 4.0</td>
-					<td>Win 95+</td>
-					<td class="center"> 4</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="even gradeC">
-					<td>Trident</td>
-					<td>Internet Explorer 5.0</td>
-					<td>Win 95+</td>
-					<td class="center">5</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="odd gradeA">
-					<td>Trident</td>
-					<td>Internet Explorer 5.5</td>
-					<td>Win 95+</td>
-					<td class="center">5.5</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="even gradeA">
-					<td>Trident</td>
-					<td>Internet Explorer 6</td>
-					<td>Win 98+</td>
-					<td class="center">6</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="odd gradeA">
-					<td>Trident</td>
-					<td>Internet Explorer 7</td>
-					<td>Win XP SP2+</td>
-					<td class="center">7</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="even gradeA">
-					<td>Trident</td>
-					<td>AOL browser (AOL desktop)</td>
-					<td>Win XP</td>
-					<td class="center">6</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Firefox 1.0</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.7</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Firefox 1.5</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.8</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Firefox 2.0</td>
-					<td>Win 98+ / OSX.2+</td>
-					<td class="center">1.8</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Firefox 3.0</td>
-					<td>Win 2k+ / OSX.3+</td>
-					<td class="center">1.9</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeA">
-					<td>Gecko</td>
-					<td>Camino 1.0</td>
-					<td>OSX.2+</td>
-					<td class="center">1.8</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				
-				<tr class="gradeX">
-					<td>Misc</td>
-					<td>Dillo 0.8</td>
-					<td>Embedded devices</td>
-					<td class="center">-</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeX">
-					<td>Misc</td>
-					<td>Links</td>
-					<td>Text only</td>
-					<td class="center">-</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeX">
-					<td>Misc</td>
-					<td>Lynx</td>
-					<td>Text only</td>
-					<td class="center">-</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeC">
-					<td>Misc</td>
-					<td>IE Mobile</td>
-					<td>Windows Mobile 6</td>
-					<td class="center">-</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeC">
-					<td>Misc</td>
-					<td>PSP browser</td>
-					<td>PSP</td>
-					<td class="center">-</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-				<tr class="gradeU">
-					<td>Other browsers</td>
-					<td>All others</td>
-					<td>-</td>
-					<td class="center">-</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>
-			</tbody>
-		</table>
+﻿<?php include 'inc/sidebar.php'; ?>
+<?php include 'inc/header.php'; ?>
+<?php include('../controlllers/ProductController.php') ?>
+<?php
+$productController = new ProductController();
+$allProduct = $productController->showProduct();
 
-       </div>
+?>
+<div class="table-agile-info">
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">
+            <h3>Liệt kê sản phẩm</h3>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Mô tả</th>
+                    <th>Hình sản phẩm</th>
+                    <th>Danh mục</th>
+                    <th style="width:30px;"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                if (!empty($allProduct)) {
+                    foreach ($allProduct as $product) {
+                        ?>
+                        <tr>
+                            <td><?php echo $product['productName'] ?></td>
+                            <td><?php echo $product['price'] ?></td>
+                            <td>
+                                <?php echo $product['productDesc'] ?>
+                            </td>
+                            <td><img src="uploads/<?php echo $product['image'] ?>" height="100" width="100" alt=""></td>
+                            <td>
+                                <?php
+                                $categoryName = $productController->findCategory($product['categoryId']);
+                                foreach ($categoryName as $item) {
+                                    echo $item['categoryName'];
+                                }
+                                ?>
+                            </td>
+                            <td><span class="text-ellipsis"></span></td>
+                            <td>
+                                <form action="productedit.php" method="post">
+                                    <button type="submit">
+                                        <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này ko?')"
+                                           href="productdel.php?productId=<?php echo $product['productId'] ?>"
+                                           class="active styling-edit"
+                                           ui-toggle-class="">
+                                            <i class="fa fa-times text-danger text"></i>
+                                        </a>
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <a href="productedit.php?productId=<?php echo $product['productId'] ?>">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        setupLeftMenu();
-        $('.datatable').dataTable();
-		setSidebarHeight();
-    });
-</script>
-<?php include 'inc/footer.php';?>
+<?php include 'inc/footer.php'; ?>
