@@ -1,11 +1,13 @@
 <?php include '../controlllers/CategoryController.php' ?>
 <?php
+echo 1;
 if ($_SERVER['REQUEST_METHOD'] === "GET" && $_GET['categoryId'] !== NULL)  {
+    echo 2;
     $categoryController = new CategoryController();
     $categoryController->deleteCategory($_GET['categoryId']);
-    return "<div class='alert alert-success'>Category Update successfully!</div>";
-    header("Location:catlist.php");
+    header('Location:catlist.php');
 } else {
-    return "<div class='alert alert-warning'>Category Update not success!</div>";
+    echo 3;
+    header("Location:catlist.php");
 }
 ?>
