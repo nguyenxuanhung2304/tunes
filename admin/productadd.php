@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
     $categoryId = $_POST['categoryId'];
     $productName = $_POST['productName'];
     $productPrice = $_POST['productPrice'];
-    $productDesc = $_POST['productDesc'];
-    $alert = $productController->addProduct($categoryId,$productName,$productDesc,$productPrice,$_FILES);
+    $image = $_FILES['productImage'];
+    $alert = $productController->addProduct($categoryId,$productName,$productPrice,$image);
 }
 ?>
 
@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
                         $categoryController = new CategoryController();
                         $categoryList = $categoryController->showCategory();
                         if ($categoryList){
-                            while($row = $categoryList->fetch_assoc()){
+                            while($category = $categoryList->fetch_assoc()){
 
                             ?>
 
-                        <option value="<?php echo $row['categoryId'] ?>">
-                            <?php echo $row['categoryName'] ?>
+                        <option value="<?php echo $category['id'] ?>">
+                            <?php echo $category['categoryName'] ?>
                         </option>
 
                         <?php }
@@ -49,8 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
 
                     </select>
                     <input type="text" name="productPrice" id="" class="form-control" placeholder="Please enter price" aria-describedby="helpId">
-                    <label for="">Description</label>
-                    <textarea name="productDesc" cols="42" rows="5"></textarea>
                     <input name="productImage" type="file"x class="form-control">
                     
                     <input class="btn btn-primary mt-2" type="submit" name="submit" value="Save">

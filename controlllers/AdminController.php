@@ -1,5 +1,6 @@
 <?php
-include_once '../models/Session.php';
+$path = realpath(__DIR__);
+include_once $path.'/../models/Session.php';
 Session::checkLogin();
 
 include_once '../models/Database.php';

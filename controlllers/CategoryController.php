@@ -1,5 +1,6 @@
 <?php
-include_once '../models/Database.php';
+$path = realpath(__DIR__);
+include_once $path.'/../models/Database.php'
 ?>
 
 <?php
@@ -13,13 +14,13 @@ class CategoryController
 
     public function deleteCategory($categoryId): void
     {
-        $query = "DELETE FROM tbl_category WHERE categoryId = '$categoryId'";
+        $query = "DELETE FROM tbl_category WHERE id = '$categoryId'";
         $this->database->delete($query);
     }
 
     public function showCategory()
     {
-        $query = "SELECT * FROM tbl_category ORDER BY categoryId DESC";
+        $query = "SELECT * FROM tbl_category ORDER BY id DESC";
         return $this->database->select($query);
     }
 
@@ -31,7 +32,7 @@ class CategoryController
         if (empty($categoryName)) {
             return "<div class='alert alert-warning'>Category name must be not empty!</div>";
         } else {
-            $query = "UPDATE tbl_category SET categoryName = '$categoryName' WHERE categoryId = '$categoryId'";
+            $query = "UPDATE tbl_category SET categoryName = '$categoryName' WHERE id = '$categoryId'";
             $this->database->update($query);
 
             return '<script>window.location.replace("catlist.php")</script>';
@@ -40,7 +41,7 @@ class CategoryController
 
     public function findCategory($categoryId)
     {
-        $query = "SELECT * FROM tbl_category WHERE categoryId = '$categoryId' LIMIT 1";
+        $query = "SELECT * FROM tbl_category WHERE id = '$categoryId' LIMIT 1";
         return $this->database->select($query);
     }
 

@@ -1,6 +1,9 @@
 <?php
-    include_once('../config/config.php');
+    $path = realpath(__DIR__);
+    include_once($path.'/../config/config.php');
+
 ?>
+
 
 <?php
     class Database
