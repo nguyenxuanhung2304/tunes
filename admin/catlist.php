@@ -36,7 +36,7 @@ $allRecord = $categoryController->showCategory();
                             <td class="td-actions text-right">
                                 <button type="button" rel="tooltip" title="Edit"
                                         class="btn btn-info btn-simple btn-link">
-                                    <a href="catedit.php?categoryId=<?php echo $row['categoryId'] ?>">
+                                    <a href="catedit.php?categoryId=<?php echo $row['id'] ?>">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 </button>
@@ -45,7 +45,7 @@ $allRecord = $categoryController->showCategory();
                                 <button type="button" rel="tooltip" title="Delete"
                                         class="btn btn-danger btn-simple btn-link">
                                     <a onclick="return confirm('Are you want to delete?')"
-                                       href="catdel.php?categoryId=<?php echo $row['categoryId'] ?>">
+                                       href="catdel.php?categoryId=<?php echo $row['id'] ?>">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </button>
