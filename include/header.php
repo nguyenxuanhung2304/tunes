@@ -50,7 +50,7 @@ $userController = new UserController();
 
 <div class="container-fluid bg-black text-black">
     <nav class="container navbar navbar-expand-lg navbar-dark bg-black">
-        <a class="navbar-brand" href="#">E-shop</a>
+        <a class="navbar-brand" href="./index.php">E-shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
