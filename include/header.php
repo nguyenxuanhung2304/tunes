@@ -40,7 +40,7 @@ $userController = new UserController();
                 <i class="fa fa-cart-plus" aria-hidden="true">
 
                 </i>
-                <a href="#">
+                <a href="cart.php">
                     My Cart
                 </a>
             </div>

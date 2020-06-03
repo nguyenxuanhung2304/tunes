@@ -12,6 +12,12 @@ class CategoryController
         $this->database = new Database();
     }
 
+    public function findProduct($id)
+    {
+        $query = "SELECT * FROM tbl_product WHERE productId = '$id'";
+        return $this->database->select($query);
+    }
+
     public function deleteCategory($categoryId): void
     {
         $query = "DELETE FROM tbl_category WHERE id = '$categoryId'";
