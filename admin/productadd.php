@@ -1,7 +1,7 @@
 ﻿<?php include_once 'inc/sidebar.php'; ?>
 <?php include_once 'inc/header.php'; ?>
-<?php include_once '../controlllers/ProductController.php'?>
-<?php include_once '../controlllers/CategoryController.php'?>
+<?php include_once '../controllers/ProductController.php' ?>
+<?php include_once '../controllers/CategoryController.php' ?>
 
 <?php
 $productController = new ProductController();
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
     $productName = $_POST['productName'];
     $productPrice = $_POST['productPrice'];
     $image = $_FILES['productImage'];
-    $alert = $productController->addProduct($categoryId,$productName,$productPrice,$image);
+    $alert = $productController->addProduct($categoryId, $productName, $productPrice, $image);
 }
 ?>
 
@@ -35,22 +35,22 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
                         <?php
                         $categoryController = new CategoryController();
                         $categoryList = $categoryController->showCategory();
-                        if ($categoryList){
-                            while($category = $categoryList->fetch_assoc()){
+                        if ($categoryList) {
+                            while ($category = $categoryList->fetch_assoc()) {
 
-                            ?>
+                        ?>
 
-                        <option value="<?php echo $category['id'] ?>">
-                            <?php echo $category['categoryName'] ?>
-                        </option>
+                                <option value="<?php echo $category['id'] ?>">
+                                    <?php echo $category['categoryName'] ?>
+                                </option>
 
                         <?php }
-                        }?>
+                        } ?>
 
                     </select>
                     <input type="text" name="productPrice" id="" class="form-control" placeholder="Please enter price" aria-describedby="helpId">
-                    <input name="productImage" type="file"x class="form-control">
-                    
+                    <input name="productImage" type="file" x class="form-control">
+
                     <input class="btn btn-primary mt-2" type="submit" name="submit" value="Save">
                 </div>
             </form>

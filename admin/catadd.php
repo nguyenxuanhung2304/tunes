@@ -1,6 +1,6 @@
 ﻿<?php include_once 'inc/sidebar.php'; ?>
 <?php include_once 'inc/header.php'; ?>
-<?php include_once '../controlllers/CategoryController.php'; ?>
+<?php include_once '../controllers/CategoryController.php'; ?>
 
 <?php
 $categoryController = new CategoryController();

@@ -32,16 +32,16 @@ class Session
       }
    }
 
-   public static function checkSession()
+   public static function checkAdminLogout()
    {
       self::init();
       if (self::get("adminLogin") == false) {
-         self::destroy();
+          session_destroy();
          header("Location:login.php");
       }
    }
 
-   public static function checkLogin()
+   public static function checkAdminLogin()
    {
       self::init();
       if (self::get("adminLogin") == true) {
@@ -49,9 +49,14 @@ class Session
       }
    }
 
-   public static function destroy()
+
+
+   public static function logout()
    {
-      session_destroy();
-      //   header("Location:login.php");
+      echo 'logout';
+       session_destroy();
+       echo "<script>window.location.replace('login.php')</script>";
    }
+
+
 }

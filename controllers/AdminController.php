@@ -1,13 +1,11 @@
 <?php
 $path = realpath(__DIR__);
 include_once $path.'/../models/Session.php';
-Session::checkLogin();
+Session::checkAdminLogin();
 
 include_once '../models/Database.php';
-include_once '../helpers/Format.php';
-?>
 
-<?php
+
 class AdminController
 {
     private $database;
@@ -15,14 +13,10 @@ class AdminController
     public function __construct()
     {
         $this->database = new Database();
-        $this->format = new Format();
     }
 
     public function login($adminUser, $adminPass)
     {
-        //validation data
-        $adminUser = $this->format->validation($adminUser);
-        $adminPass = $this->format->validation($adminPass);
 
         $adminUser = mysqli_real_escape_string($this->database->link, $adminUser);
         $adminPass = mysqli_real_escape_string($this->database->link, $adminPass);

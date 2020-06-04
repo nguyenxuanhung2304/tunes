@@ -1,5 +1,5 @@
 <?php
-include '../controlllers/ProductController.php';
+include '../controllers/ProductController.php';
 ?>
 
 <?php

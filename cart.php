@@ -1,7 +1,7 @@
 <?php
 $path = realpath(__DIR__);
 include_once($path . '/./include/header.php');
-include_once('./controlllers/CartController.php');
+include_once('./controllers/CartController.php');
 ?>
 
 <div class="container mt-3 text-center">
@@ -29,6 +29,7 @@ include_once('./controlllers/CartController.php');
 		<tbody>
 
 			<?php
+			$cartController = new CartController();
 			$listCart = $cartController->showCart();
 			if ($listCart) {
 				while ($item = $listCart->fetch_assoc()) {

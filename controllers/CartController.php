@@ -1,7 +1,7 @@
 <?php
 $path = realpath(__DIR__);
 include_once $path . '/../models/Database.php';
-include_once $path . '/../controlllers/ProductController.php';
+include_once $path . '/../controllers/ProductController.php';
 ?>
 
 <?php
@@ -32,10 +32,10 @@ class CartController
 
         $result = $this->database->insert($query);
 
-        if($result){
+        if ($result) {
             return "<div class='alert alert-success'>Add product to cart success!</div>";
         }
-            return "<div class='alert alert-danger'>Add product to cart failed!</div>";
+        return "<div class='alert alert-danger'>Add product to cart failed!</div>";
     }
 
     public function showCart()
@@ -44,15 +44,15 @@ class CartController
         return $this->database->select($query);
     }
 
-    public function updateQuantity($quantity,$id)
+    public function updateQuantity($quantity, $id)
     {
         $query = "UPDATE tbl_cart SET quantity = '$quantity' WHERE id = '$id'";
         $result = $this->database->insert($query);
-        
+
         if ($result) {
             return '<div class"alert alert-success">Update the quantity success!</div>';
         }
-            return '<div class"alert alert-danger">Update the quantity failed!</div>';
+        return '<div class"alert alert-danger">Update the quantity failed!</div>';
     }
 
     public function deleteItem($id)
