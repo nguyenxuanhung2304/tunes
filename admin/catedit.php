@@ -1,22 +1,21 @@
-
 <?php include_once 'inc/sidebar.php'; ?>
 <?php include_once 'inc/header.php'; ?>
-<?php include_once '../controlllers/CategoryController.php'; ?>
+<?php include_once '../controllers/CategoryController.php'; ?>
 
 <?php
 //Get id record cần edit
 $categoryController = new CategoryController();
-if (!isset($categoryId) && $_GET['categoryId'] === NULL){
+if (!isset($categoryId) && $_GET['categoryId'] === NULL) {
     echo "<script>
             window.location('catlist.php');
           </script>";
-}else{
+} else {
     $id = $_GET['categoryId'];
 }
 //update
-if ($_SERVER["REQUEST_METHOD"] === 'POST'){
+if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $categoryName = $_POST["categoryName"];
-    $updateCategory = $categoryController->updateCategory($id,$categoryName);
+    $updateCategory = $categoryController->updateCategory($id, $categoryName);
 }
 
 
@@ -36,18 +35,18 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST'){
             </div>
             <?php
             $row = $categoryController->findCategory($id);
-            if($row){
-                while($editRowName = $row->fetch_assoc()){ ?>
+            if ($row) {
+                while ($editRowName = $row->fetch_assoc()) { ?>
 
-            <form method="POST" action="">
-                <div class="form-group text-center">
-                    <input type="text" name="categoryName" id="" class="form-control" aria-describedby="helpId" value="<?php echo $editRowName['categoryName']  ?>">
-                    <input class="btn btn-primary mt-2" type="submit" name="" value="Edit">
-                </div>
-            </form>
+                    <form method="POST" action="">
+                        <div class="form-group text-center">
+                            <input type="text" name="categoryName" id="" class="form-control" aria-describedby="helpId" value="<?php echo $editRowName['categoryName']  ?>">
+                            <input class="btn btn-primary mt-2" type="submit" name="" value="Edit">
+                        </div>
+                    </form>
 
             <?php }
-            }?>
+            } ?>
         </div>
     </div>
 </div>

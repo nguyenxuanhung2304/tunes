@@ -1,18 +1,18 @@
-<?php include 'models/Session.php' ?>
-<?php Session::init(); ?>
 <?php
-$path = realpath(__DIR__);
-include_once($path.'/../models/Database.php');
+include 'models/Session.php';
+Session::init();
 
-spl_autoload_register(function ($className){
-   include_once ('controlllers/'.$className.'.php');
+$path = realpath(__DIR__);
+include_once $path . '/../models/Database.php';
+spl_autoload_register(function ($className) {
+    include_once ('controllers/' . $className . '.php');
 });
 
-$cartController = new CartController();
-$categoryController = new CategoryController();
-$productController = new ProductController();
-$userController = new UserController();
+if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+    Session::logout();
+}
 ?>
+
 
 <!doctype html>
 <html>
@@ -21,8 +21,6 @@ $userController = new UserController();
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap4.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom.css">
     <title>E-Shop</title>
 </head>
 
@@ -33,12 +31,15 @@ $userController = new UserController();
         <div class="row text-light pt-2 pb-2">
             <div class="col-md-5"><i class="fa fa-envelope-o" aria-hidden="true"></i> mongtamquoc2015@gmail.com</div>
             <div class="col-md-3">
-
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                Hello <?php echo Session::get('name') ?>
             </div>
-            <div class="col-md-2"><i class="fa fa-user-o" aria-hidden="true"></i> Account</div>
+            <div class="col-md-2">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <a href="?action=logout">Logout</a>
+            </div>
             <div class="col-md-2">
                 <i class="fa fa-cart-plus" aria-hidden="true">
-
                 </i>
                 <a href="cart.php">
                     My Cart
@@ -50,7 +51,7 @@ $userController = new UserController();
 
 <div class="container-fluid bg-black text-black">
     <nav class="container navbar navbar-expand-lg navbar-dark bg-black">
-        <a class="navbar-brand" href="#">E-shop</a>
+        <a class="navbar-brand" href="./index.php">E-shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

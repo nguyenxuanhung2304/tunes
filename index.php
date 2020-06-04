@@ -1,17 +1,23 @@
 <?php
 include_once('./include/header.php');
 include_once('./function/truncateStringWords.php');
-
+include_once('./controllers/CategoryController.php');
+include_once('./controllers/ProductController.php');
+include_once('./controllers/UserController.php');
 ?>
 
 <?php
+$categoryController = new CategoryController();
+$productController = new ProductController();
+$userController = new UserController();
+
 $allCategory = $categoryController->showCategory();
 
 ?>
 
 
 <div class="container-fluid bg-light-gray">
-    
+
     <?php
     if (!empty($newProduct) || !empty($allCategory)) {
 

@@ -1,7 +1,8 @@
 <?php
 include_once '../models/Session.php';
-Session::checkSession();
+Session::checkAdminLogout();
 ?>
+
 <?php
 header("Cache-Control: no-cache, must-revalidate");
 header("Pragma: no-cache");

@@ -178,8 +178,7 @@
                           </a>
                           <?php
                             if (isset($_GET['action']) && $_GET['action'] === 'logout') {
-                                echo 'Logout';
-                                Session::destroy();
+                                Session::logout();
                             }
                             ?>
                           <a class="dropdown-item" href="?action=logout">
