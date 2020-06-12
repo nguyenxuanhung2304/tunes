@@ -1,6 +1,6 @@
-﻿<?php include 'inc/sidebar.php'; ?>
-<?php include 'inc/header.php'; ?>
-<?php include('../controllers/ProductController.php') ?>
+﻿<?php include 'inc/sidebar.php';?>
+<?php include 'inc/header.php';?>
+<?php include '../controllers/ProductController.php'?>
 <?php
 $productController = new ProductController();
 $allProduct = $productController->showProduct();
@@ -25,9 +25,9 @@ $allProduct = $productController->showProduct();
                 </thead>
                 <tbody>
                     <?php
-                    if (!empty($allProduct)) {
-                        foreach ($allProduct as $product) {
-                    ?>
+if (!empty($allProduct)) {
+    foreach ($allProduct as $product) {
+        ?>
                             <tr>
                                 <td><?php echo $product['productName'] ?></td>
                                 <td><?php echo $product['price'] ?></td>
@@ -37,21 +37,19 @@ $allProduct = $productController->showProduct();
                                 <td><img src="uploads/<?php echo $product['image'] ?>" height="100" width="100" alt=""></td>
                                 <td>
                                     <?php
-                                    $categoryName = $productController->findCategory($product['categoryId']);
-                                    foreach ($categoryName as $item) {
-                                        echo $item['categoryName'];
-                                    }
-                                    ?>
+$categoryName = $productController->findCategory($product['categoryId']);
+        foreach ($categoryName as $item) {
+            echo $item['categoryName'];
+        }
+        ?>
                                 </td>
                                 <td><span class="text-ellipsis"></span></td>
                                 <td>
-                                    <form action="productedit.php" method="post">
                                         <button type="submit">
                                             <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này ko?')" href="productdel.php?productId=<?php echo $product['productId'] ?>" class="active styling-edit" ui-toggle-class="">
                                                 <i class="fa fa-times text-danger text"></i>
                                             </a>
                                         </button>
-                                    </form>
                                 </td>
                                 <td>
                                     <a href="productedit.php?productId=<?php echo $product['productId'] ?>">
@@ -60,12 +58,12 @@ $allProduct = $productController->showProduct();
                                 </td>
                             </tr>
                     <?php
-                        }
-                    } ?>
+}
+}?>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-<?php include 'inc/footer.php'; ?>
+<?php include 'inc/footer.php';?>
