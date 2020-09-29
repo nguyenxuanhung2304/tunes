@@ -21,11 +21,11 @@ class HomeController
 
     public function signIn($userName,$password)
     {
-        $userName = mysql_real_escape_string($this->database->link,$userName);
+        $userName = mysqli_real_escape_string($this->database->link,$userName);
         $password = mysqli_real_escape_string($this->database->link,$password);
 
         if (!empty($userName) && !empty($password)) {
-            $query = "INSERT INTO tbl_user(userName,password) VALUES('$userName','$password')";
+            $query = "INSERT INTO tbl_user(username,`password`) VALUES('$userName','$password')";
             $result = $this->database->insert($query);
             if ($result) {
                 header('login.php');
@@ -36,11 +36,11 @@ class HomeController
     public function login($userName,$password)
     {
 
-        $userName = mysql_real_escape_string($this->database->link,$userName);
+        $userName = mysqli_real_escape_string($this->database->link,$userName);
         $password = mysqli_real_escape_string($this->database->link,$password);
 
         if (!empty($userName) && !empty($password)) {
-            $query = "SELECT * FROM tbl_user WHERE userName = '$userName' AND password = '$password' ";
+            $query = "SELECT * FROM tbl_user WHERE username = '$userName' AND `password` = '$password' ";
             $result = $this->database->select($query);
 
             if ($result) {

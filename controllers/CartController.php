@@ -27,7 +27,7 @@ class CartController
         $productName = $product['productName'];
         $productId = $product['productId'];
 
-        $query = "INSERT INTO tbl_cart(productId,sessionId,productName,price,quantity,image) VALUES
+        $query = "INSERT INTO tbl_cart(productId,`session_id`,product_name,price,quantity,image) VALUES
         ('$productId','$sessionId','$productName','$price','$quantity','$image')";
 
         $result = $this->database->insert($query);

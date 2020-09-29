@@ -14,7 +14,7 @@ class CategoryController
 
     public function findProduct($id)
     {
-        $query = "SELECT * FROM tbl_product WHERE productId = '$id'";
+        $query = "SELECT * FROM tbl_product WHERE product_id = '$id'";
         return $this->database->select($query);
     }
 
@@ -38,7 +38,7 @@ class CategoryController
         if (empty($categoryName)) {
             return "<div class='alert alert-warning'>Category name must be not empty!</div>";
         } else {
-            $query = "UPDATE tbl_category SET categoryName = '$categoryName' WHERE id = '$categoryId'";
+            $query = "UPDATE tbl_category SET `name` = '$categoryName' WHERE id = '$categoryId'";
             $this->database->update($query);
 
             return '<script>window.location.replace("catlist.php")</script>';
@@ -60,7 +60,7 @@ class CategoryController
         if (empty($categoryName)) {
             return "<div class='alert alert-warning'>Category name must be not empty!</div>";
         } else {
-            $query = "INSERT INTO tbl_category(categoryName) VALUES('$categoryName')";
+            $query = "INSERT INTO tbl_category(`name`) VALUES('$categoryName')";
             $row = $this->database->insert($query);
 
             if ($row !== false) {

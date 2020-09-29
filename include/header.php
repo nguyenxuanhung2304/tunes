@@ -29,7 +29,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'logout') {
 <div class="container-fluid bg-dark header-top d-none d-md-block">
     <div class="container">
         <div class="row text-light pt-2 pb-2">
-            <div class="col-md-5"><i class="fa fa-envelope-o" aria-hidden="true"></i> mongtamquoc2015@gmail.com</div>
+            <div class="col-md-5"><i class="fa fa-envelope-o" aria-hidden="true"></i> mylover21072000@gmail.com</div>
             <div class="col-md-3">
                 <i class="fa fa-user-o" aria-hidden="true"></i>
                 Hello <?php echo Session::get('name') ?>
