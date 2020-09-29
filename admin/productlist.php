@@ -29,30 +29,33 @@ if (!empty($allProduct)) {
     foreach ($allProduct as $product) {
         ?>
                             <tr>
-                                <td><?php echo $product['productName'] ?></td>
+                                <td><?php echo $product['name'] ?></td>
                                 <td><?php echo $product['price'] ?></td>
                                 <td>
-                                    <?php echo $product['productDesc'] ?>
+                                    <?php echo $product['description'] ?>
                                 </td>
                                 <td><img src="uploads/<?php echo $product['image'] ?>" height="100" width="100" alt=""></td>
                                 <td>
                                     <?php
-$categoryName = $productController->findCategory($product['categoryId']);
+$categoryName = $productController->findCategory($product['id']);
         foreach ($categoryName as $item) {
-            echo $item['categoryName'];
+            echo $item['name'];
         }
         ?>
                                 </td>
                                 <td><span class="text-ellipsis"></span></td>
                                 <td>
                                         <button type="submit">
-                                            <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này ko?')" href="productdel.php?productId=<?php echo $product['productId'] ?>" class="active styling-edit" ui-toggle-class="">
+                                            <a onclick="return confirm('Bạn có chắc là muốn xóa sản phẩm này ko?')"
+                                                ref="productdel.php?productId=<?php echo $product['id'] ?>"
+                                                class="active styling-edit"
+                                            >
                                                 <i class="fa fa-times text-danger text"></i>
                                             </a>
                                         </button>
                                 </td>
                                 <td>
-                                    <a href="productedit.php?productId=<?php echo $product['productId'] ?>">
+                                    <a href="productedit.php?productId=<?php echo $product['id'] ?>">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 </td>

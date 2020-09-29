@@ -26,7 +26,7 @@ class CategoryController
 
     public function showCategory()
     {
-        $query = "SELECT * FROM tbl_category ORDER BY id DESC";
+        $query = "SELECT * FROM tbl_category";
         return $this->database->select($query);
     }
 

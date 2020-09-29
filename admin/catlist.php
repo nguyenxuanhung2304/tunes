@@ -31,7 +31,7 @@ $allRecord = $categoryController->showCategory();
                                         <?php echo $id ?>
                                     </th>
                                     <td>
-                                        <?php echo $row['categoryName'] ?>
+                                        <?php echo $row['name'] ?>
                                     </td>
                                     <td class="td-actions text-right">
                                         <button type="button" rel="tooltip" title="Edit" class="btn btn-info btn-simple btn-link">

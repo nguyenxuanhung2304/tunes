@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
     $productName = $_POST['productName'];
     $productPrice = $_POST['productPrice'];
     $image = $_FILES['productImage'];
-    $alert = $productController->addProduct($categoryId, $productName, $productPrice, $image);
+    $description = $_POST['description'];
+    $alert = $productController->addProduct($categoryId, $productName, $productPrice, $image,$description);
 }
 ?>
 
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
                         ?>
 
                                 <option value="<?php echo $category['id'] ?>">
-                                    <?php echo $category['categoryName'] ?>
+                                    <?php echo $category['name'] ?>
                                 </option>
 
                         <?php }
@@ -49,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['submit'])) {
 
                     </select>
                     <input type="text" name="productPrice" id="" class="form-control" placeholder="Please enter price" aria-describedby="helpId">
+                    <input type="text" class="form-control" name="description" placeholder="Please enter description">
                     <input name="productImage" type="file" x class="form-control">
 
                     <input class="btn btn-primary mt-2" type="submit" name="submit" value="Save">

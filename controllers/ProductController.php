@@ -36,7 +36,7 @@ class ProductController
 
     public function updateProduct($categoryId,$productId, $productName, $price, $image)
     {
-        if (empty($category_id) || empty($productName) || empty($price) || empty($image)) {
+        if (empty($categoryId) || empty($productName) || empty($price) || empty($image)) {
             return "<div class='alert alert-warning'>Field must be not empty!</div>";
         } else {
             $query = "UPDATE tbl_product SET category_id = '$categoryId', `name` = '$productName',
@@ -58,7 +58,7 @@ class ProductController
         return $this->database->select($query);
     }
 
-    public function addProduct($categoryId, $productName, $productPrice, $file)
+    public function addProduct($categoryId, $productName, $productPrice, $file,$description)
     {
         //Image
         $imageName = basename($file['name']);
@@ -72,12 +72,12 @@ class ProductController
         }
 
         // check empty
-        if (empty($category_id) || empty($productName) || empty($productPrice)) {
+        if (empty($categoryId) || empty($productName) || empty($productPrice) || empty($description)) {
             return "<div class='alert alert-warning'>Field name must be not empty!</div>";
         }
 
-        $query = "INSERT INTO tbl_product(`name`,category_id,price,`image`)
-        VALUES('$productName','$categoryId','$productPrice','$imageName')";
+        $query = "INSERT INTO tbl_product(`name`,category_id,price,`image`,`description`)
+        VALUES('$productName','$categoryId','$productPrice','$imageName','$description')";
         $row = $this->database->insert($query);
 
         if ($row !== false) {

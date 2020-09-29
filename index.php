@@ -12,23 +12,21 @@ $productController = new ProductController();
 $userController = new UserController();
 
 $allCategory = $categoryController->showCategory();
-
 ?>
 
 
 <div class="container-fluid bg-light-gray">
 
     <?php
-    if (!empty($newProduct) || !empty($allCategory)) {
+    if (!empty($allCategory)) {
 
         while ($category = $allCategory->fetch_assoc()) {
             $oldProduct = $productController->oldProduct($category['id']);
     ?>
-
             <div class="container pt-5">
                 <div class="row">
                     <h3>
-                        <?php echo $category['categoryName'] ?>
+                        <?php echo $category['name'] ?>
                     </h3>
                 </div>
                 <div class="underline"></div>
